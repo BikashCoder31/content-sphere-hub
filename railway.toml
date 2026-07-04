@@ -1,0 +1,2 @@
+[build]
+  NIXPACKS_NODE_VERSION = "22"

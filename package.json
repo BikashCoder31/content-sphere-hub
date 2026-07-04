@@ -1,0 +1,48 @@
+{
+  "name": "content-sphere-hub",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Enterprise-Grade Content Management System built with MERN + TypeScript",
+  "keywords": ["cms", "content-management", "mern", "typescript", "react", "node", "mongodb"],
+  "license": "MIT",
+  "author": "Content Sphere Hub Team",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "pnpm -r --parallel run dev",
+    "dev:backend": "pnpm --filter @content-sphere-hub/backend run dev",
+    "dev:frontend": "pnpm --filter @content-sphere-hub/frontend run dev",
+    "build": "pnpm -r run build",
+    "build:all": "pnpm build:shared && pnpm build:frontend",
+    "build:vercel": "pnpm build:shared && pnpm build:frontend",
+    "build:backend": "pnpm --filter @content-sphere-hub/backend run build",
+    "build:frontend": "pnpm --filter @content-sphere-hub/frontend run build",
+    "build:shared": "pnpm --filter @content-sphere-hub/shared run build",
+    "start": "pnpm --filter @content-sphere-hub/backend run start",
+    "test": "pnpm -r run test",
+    "test:backend": "pnpm --filter @content-sphere-hub/backend run test",
+    "test:frontend": "pnpm --filter @content-sphere-hub/frontend run test",
+    "lint": "pnpm -r run lint",
+    "lint:fix": "pnpm -r run lint:fix",
+    "format": "prettier --write \"packages/*/src/**/*.{ts,tsx,js,jsx,json,css,scss,md}\"",
+    "format:check": "prettier --check \"packages/*/src/**/*.{ts,tsx,js,jsx,json,css,scss,md}\"",
+    "typecheck": "pnpm -r run typecheck",
+    "clean": "pnpm -r run clean && rimraf node_modules",
+    "seed": "pnpm --filter @content-sphere-hub/backend run seed",
+    "seed:admin": "pnpm --filter @content-sphere-hub/backend run seed:admin",
+    "db:migrate": "pnpm --filter @content-sphere-hub/backend run db:migrate",
+    "prepare": "pnpm build:shared"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "prettier": "^3.3.0",
+    "rimraf": "^5.0.7",
+    "typescript": "^5.5.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "packageManager": "pnpm@9.15.0"
+}

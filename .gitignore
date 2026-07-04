@@ -1,0 +1,147 @@
+# ============================
+# Dependencies
+# ============================
+node_modules/
+.pnpm-store/
+package-lock.json
+yarn.lock
+
+# ============================
+# Build Outputs
+# ============================
+dist/
+build/
+.next/
+out/
+*.tsbuildinfo
+
+# ============================
+# Environment Variables (SECRETS!)
+# ============================
+.env
+.env.local
+.env.development
+.env.development.local
+.env.test
+.env.test.local
+.env.production
+.env.production.local
+.env.staging
+.env.*.local
+
+# Keep the example file
+!.env.example
+
+# ============================
+# IDE & Editor
+# ============================
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+.settings/
+
+# ============================
+# OS Generated Files
+# ============================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# ============================
+# Logs
+# ============================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ============================
+# Cache & Temp Files
+# ============================
+.cache/
+.parcel-cache/
+.turbo/
+.eslintcache
+.stylelintcache
+*.tmp
+*.temp
+.temp/
+.tmp/
+
+# ============================
+# Test & Coverage
+# ============================
+coverage/
+.nyc_output/
+*.lcov
+.jest/
+jest-results.json
+
+# ============================
+# Uploads & User Data (Local Dev)
+# ============================
+uploads/
+packages/backend/uploads/
+!packages/backend/uploads/.gitkeep
+
+# ============================
+# Database (Local Dev)
+# ============================
+*.sqlite
+*.sqlite3
+*.db
+data/
+mongodb-data/
+
+# ============================
+# Docker (Local Volumes)
+# ============================
+docker-data/
+.docker/
+
+# ============================
+# Secrets & Credentials (NEVER COMMIT!)
+# ============================
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+credentials.json
+service-account.json
+secrets/
+.secrets/
+
+# ============================
+# Misc
+# ============================
+*.tgz
+*.tar.gz
+*.zip
+.turbo
+.vercel
+.netlify
+
+# ============================
+# Debug
+# ============================
+.fusebox/
+.dynamodb/
+.serverless/
+
+# Hermes Agent files
+.hermes/

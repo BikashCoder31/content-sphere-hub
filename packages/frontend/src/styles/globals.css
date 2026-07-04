@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-background: 255 255 255;
+    --color-foreground: 15 23 42;
+    --color-muted: 241 245 249;
+    --color-muted-foreground: 100 116 139;
+    --color-border: 226 232 240;
+    --color-ring: 14 165 233;
+  }
+
+  .dark {
+    --color-background: 15 23 42;
+    --color-foreground: 248 250 252;
+    --color-muted: 30 41 59;
+    --color-muted-foreground: 148 163 184;
+    --color-border: 51 65 85;
+    --color-ring: 56 189 248;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-white text-secondary-900 dark:bg-secondary-900 dark:text-secondary-50;
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
+  }
+
+  * {
+    @apply border-secondary-200 dark:border-secondary-700;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary-600 text-white hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600;
+  }
+
+  .btn-secondary {
+    @apply btn bg-secondary-100 text-secondary-900 hover:bg-secondary-200 dark:bg-secondary-800 dark:text-secondary-100 dark:hover:bg-secondary-700;
+  }
+
+  .btn-outline {
+    @apply btn border border-secondary-300 bg-transparent hover:bg-secondary-100 dark:border-secondary-600 dark:hover:bg-secondary-800;
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent hover:bg-secondary-100 dark:hover:bg-secondary-800;
+  }
+
+  .btn-destructive {
+    @apply btn bg-red-600 text-white hover:bg-red-700;
+  }
+
+  .input {
+    @apply flex h-10 w-full rounded-lg border border-secondary-300 bg-white px-3 py-2 text-sm ring-offset-white placeholder:text-secondary-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-secondary-600 dark:bg-secondary-800 dark:ring-offset-secondary-900 dark:placeholder:text-secondary-400;
+  }
+
+  .textarea {
+    @apply input min-h-[80px] py-2;
+  }
+
+  .label {
+    @apply text-sm font-medium text-secondary-700 dark:text-secondary-300;
+  }
+
+  .card {
+    @apply rounded-xl border bg-white p-6 shadow-sm dark:bg-secondary-800;
+  }
+
+  .badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+
+  .badge-primary {
+    @apply badge bg-primary-100 text-primary-700 dark:bg-primary-900 dark:text-primary-300;
+  }
+
+  .badge-secondary {
+    @apply badge bg-secondary-100 text-secondary-700 dark:bg-secondary-700 dark:text-secondary-300;
+  }
+
+  .badge-success {
+    @apply badge bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300;
+  }
+
+  .badge-warning {
+    @apply badge bg-yellow-100 text-yellow-700 dark:bg-yellow-900 dark:text-yellow-300;
+  }
+
+  .badge-error {
+    @apply badge bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-300;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.secondary.300') transparent;
+  }
+
+  .dark .scrollbar-thin {
+    scrollbar-color: theme('colors.secondary.600') transparent;
+  }
+
+  /* Landing page animations */
+  .animate-spin-slow {
+    animation: spin 20s linear infinite;
+  }
+
+  .animate-float-1 {
+    animation: float1 3s ease-in-out infinite;
+  }
+
+  .animate-float-2 {
+    animation: float2 4s ease-in-out infinite;
+  }
+
+  .animate-float-3 {
+    animation: float3 3.5s ease-in-out infinite;
+  }
+
+  @keyframes float1 {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes float2 {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+  }
+
+  @keyframes float3 {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-8px) scale(1.05); }
+  }
+}
