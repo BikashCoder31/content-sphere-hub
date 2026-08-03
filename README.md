@@ -13,9 +13,11 @@
 
 ## 🚀 Live Demo
 
-🌐 **[View Live Demo](https://content-sphere-hub.vercel.app/)**
+🌐 **[Frontend — Vercel](https://content-sphere-hub.vercel.app/)**
 
-> Note: This is a frontend-only deployment. Backend features (login, content creation) require a separate backend deployment.
+⚙️ **[Backend API — Railway](https://content-sphere-hubbackend-production.up.railway.app/api)**
+
+💚 **[Backend Health Check](https://content-sphere-hubbackend-production.up.railway.app/health/ready)**
 
 ## 📸 Screenshots
 
