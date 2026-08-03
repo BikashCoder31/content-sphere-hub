@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import { ZodError } from 'zod';
 import logger from '../config/logger.js';
-import { config } from '../config/index.js';
+import { config } from '../config/env.js';
 
 /**
  * Custom application error class

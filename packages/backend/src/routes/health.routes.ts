@@ -1,6 +1,6 @@
 import { Router, Request, Response } from 'express';
 import mongoose from 'mongoose';
-import { config } from '../config/index.js';
+import { config } from '../config/env.js';
 
 export const healthRouter: Router = Router();
 

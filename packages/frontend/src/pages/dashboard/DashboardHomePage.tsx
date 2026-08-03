@@ -175,7 +175,7 @@ export function DashboardHomePage() {
                 <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
                 <XAxis dataKey="date" stroke="#9CA3AF" fontSize={12} tickFormatter={(v) => new Date(v).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} />
                 <YAxis stroke="#9CA3AF" fontSize={12} />
-                <Tooltip contentStyle={{ backgroundColor: '#1F2937', border: 'none', borderRadius: '8px', color: '#fff' }} labelFormatter={(v) => new Date(v).toLocaleDateString()} />
+                <Tooltip contentStyle={{ backgroundColor: '#1F2937', border: 'none', borderRadius: '8px', color: '#fff' }} labelFormatter={(v) => new Date(String(v)).toLocaleDateString()} />
                 <Line type="monotone" dataKey="count" stroke="#3B82F6" strokeWidth={2} dot={false} />
               </LineChart>
             </ResponsiveContainer>

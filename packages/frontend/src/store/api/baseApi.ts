@@ -10,8 +10,10 @@ import { tokenStorage } from '@/lib/tokenStorage';
 import { logout, setCredentials } from '../slices/authSlice';
 import type { AuthTokens } from '@content-sphere-hub/shared';
 
+const apiBaseUrl = (import.meta.env.VITE_API_URL || '/api/v1').replace(/\/$/, '');
+
 const baseQuery = fetchBaseQuery({
-  baseUrl: '/api/v1',
+  baseUrl: apiBaseUrl,
   prepareHeaders: (headers, { getState }) => {
     const token = (getState() as RootState).auth.accessToken;
     if (token) {

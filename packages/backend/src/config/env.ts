@@ -10,6 +10,7 @@ const envSchema = z.object({
   API_VERSION: z.string().default('v1'),
   APP_NAME: z.string().default('Content Sphere Hub'),
   APP_URL: z.string().url().default('http://localhost:5173'),
+  PUBLIC_API_URL: z.string().url().optional(),
 
   // Database
   MONGODB_URI: z.string().default('mongodb://localhost:27017/content-sphere-hub'),
@@ -88,6 +89,7 @@ export const config = {
   apiVersion: env.API_VERSION,
   appName: env.APP_NAME,
   appUrl: env.APP_URL,
+  publicApiUrl: env.PUBLIC_API_URL?.replace(/\/$/, ''),
   isDev: env.NODE_ENV === 'development',
   isProd: env.NODE_ENV === 'production',
   isTest: env.NODE_ENV === 'test',

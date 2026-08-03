@@ -10,7 +10,7 @@ import {
   ImageVariant,
   ProcessedImage,
 } from './storage.interface.js';
-import { config } from '../config/index.js';
+import { config } from '../config/env.js';
 import { logger } from '../config/logger.js';
 
 /**
@@ -25,7 +25,7 @@ export class LocalStorageProvider implements StorageProvider {
   constructor() {
     // Default to ./uploads in project root, can be overridden via config
     this.baseDir = config.upload.localPath || path.join(process.cwd(), 'uploads');
-    this.baseUrl = '/uploads';
+    this.baseUrl = config.publicApiUrl ? `${config.publicApiUrl}/uploads` : '/uploads';
   }
 
   /**
